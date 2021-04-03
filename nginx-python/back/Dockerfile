@@ -11,5 +11,6 @@ ADD . /backend
 RUN pip install -r requirements.txt
 
 # Optional, if using Flask, run it as uwsgi. Otherwise, set your own script here.
-# i.e. CMD ["python3", "yourfile.py"]
-CMD ["uwsgi", "app.ini"]
+# i.e CMD ["uwsgi", "app.ini"]
+CMD ["python3", "app.py"]
+
