@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mysql:
+    hostname: 'mysql-my-app'
+    restart: always
+    image: mysql:5.7.31
+    ports:
+    - "127.0.0.1:3306:3306"
+    environment:
+    - MYSQL_ROOT_PASSWORD=MySecurePassword2022   
+    - MYSQL_HOST=%             
+    - MYSQL_ROOT_HOST=%
+    volumes:
+    - /data/my-app/mysql:/var/lib/mysql
+    # - /data/my-app/mysql.conf.d:/etc/mysql/mysql.conf.d
+    # This line abobe is required if you have a previous configuration folder,
+    # In case you need it, first copy them from your previous Docker instnace.
+    # jdenicola, 2022-07-08
